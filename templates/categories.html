@@ -4,55 +4,121 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Article Hub - Categories</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            color: #222;
+            line-height: 1.6;
+        }
+        nav {
+            background: #1f2937;
+            padding: 16px 8%;
+            display: flex;
+            justify-content: center;
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .nav-links a:hover {
+            color: #fff;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        h1 {
+            font-size: 32px;
+            color: #111827;
+            margin-bottom: 6px;
+        }
+        .subhead {
+            color: #6b7280;
+            font-size: 17px;
+            margin-bottom: 28px;
+        }
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .category-card {
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+        }
+        .category-card h3 {
+            font-size: 19px;
+            margin-bottom: 4px;
+        }
+        .category-card p {
+            color: #4b5563;
+            font-size: 15px;
+        }
+        @media (max-width: 768px) {
+            nav {
+                padding: 14px 5%;
+            }
+            .nav-links {
+                gap: 18px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <h1>Article Hub</h1>
+<nav>
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/articles">Articles</a></li>
+        <li><a href="/categories">Categories</a></li>
+        <li><a href="/about">About</a></li>
+    </ul>
+</nav>
 
-        <nav>
-            <a href="/">Home</a>
-            <a href="/articles">Articles</a>
-            <a href="/categories">Categories</a>
-            <a href="/about">About</a>
-        </nav>
-    </header>
+<main class="container">
+    <h1>Categories</h1>
+    <p class="subhead">Browse articles by category.</p>
 
-    <main>
-        <h2>Categories</h2>
-
-        <p>Browse articles by category.</p>
-
-        <section>
+    <div class="category-grid">
+        <section class="category-card">
             <h3>Programming</h3>
             <p>Articles about programming languages, development, and software.</p>
         </section>
-
-        <section>
+        <section class="category-card">
             <h3>DevOps</h3>
             <p>Articles about Docker, Kubernetes, CI/CD, and cloud technologies.</p>
         </section>
-
-        <section>
+        <section class="category-card">
             <h3>Linux</h3>
             <p>Articles about Linux, the command line, and system administration.</p>
         </section>
-
-        <section>
+        <section class="category-card">
             <h3>Networking</h3>
             <p>Articles about networks, protocols, servers, and the Internet.</p>
         </section>
-
-        <section>
+        <section class="category-card">
             <h3>Technology</h3>
             <p>General articles about technology and modern computing.</p>
         </section>
-
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Article Hub</p>
-    </footer>
+    </div>
+</main>
 
 </body>
 </html>

@@ -3,81 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Article Hub - Articles</title>
+    <title>Flask App - Home</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            color: #222;
+            line-height: 1.6;
+        }
+        nav {
+            background: #1f2937;
+            padding: 16px 8%;
+            display: flex;
+            justify-content: center;
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .nav-links a:hover {
+            color: #fff;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .hero {
+            background: #fff;
+            text-align: center;
+            padding: 50px 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+        .hero h1 {
+            font-size: 36px;
+            color: #111827;
+            margin-bottom: 12px;
+        }
+        .hero p {
+            max-width: 600px;
+            margin: 0 auto 24px;
+            color: #4b5563;
+            font-size: 17px;
+        }
+        .btn {
+            display: inline-block;
+            background: #2563eb;
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background: #1d4ed8;
+        }
+        .featured h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 24px;
+        }
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .article-card {
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+        }
+        .article-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        .article-card p {
+            color: #4b5563;
+            margin-bottom: 14px;
+        }
+        .read-more {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .read-more:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            nav {
+                padding: 14px 5%;
+            }
+            .nav-links {
+                gap: 18px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .article-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <h1>Article Hub</h1>
+<nav>
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/articles">Articles</a></li>
+        <li><a href="/categories">Categories</a></li>
+        <li><a href="/about">About</a></li>
+    </ul>
+</nav>
 
-        <nav>
-            <a href="/">Home</a>
-            <a href="/articles">Articles</a>
-            <a href="/categories">Categories</a>
-            <a href="/about">About</a>
-        </nav>
-    </header>
+<main class="container">
+    <section class="hero">
+        <h1>Discover. Learn. Explore.</h1>
+        <p>Explore useful and interesting articles covering technology, programming, DevOps, Linux, networking, and more.</p>
+        <a href="/articles" class="btn">Explore Articles</a>
+    </section>
 
-    <main>
-        <h2>Articles</h2>
-
-        <p>Explore our collection of articles.</p>
-
-        <article>
-            <h3>Understanding Docker</h3>
-            <p>
-                Learn what Docker is, why containers are useful,
-                and how they simplify application deployment.
-            </p>
-            <p>Category: DevOps</p>
-            <a href="#">Read Article</a>
-        </article>
-
-        <article>
-            <h3>Getting Started with Linux</h3>
-            <p>
-                Learn about Linux, the command line, filesystems,
-                permissions, and basic commands.
-            </p>
-            <p>Category: Linux</p>
-            <a href="#">Read Article</a>
-        </article>
-
-        <article>
-            <h3>Introduction to Git</h3>
-            <p>
-                Understand version control and learn how Git helps
-                developers manage their code.
-            </p>
-            <p>Category: Programming</p>
-            <a href="#">Read Article</a>
-        </article>
-
-        <article>
-            <h3>How the Internet Works</h3>
-            <p>
-                Learn the basic concepts behind networks, servers,
-                clients, DNS, and HTTP.
-            </p>
-            <p>Category: Networking</p>
-            <a href="#">Read Article</a>
-        </article>
-
-        <article>
-            <h3>Introduction to Kubernetes</h3>
-            <p>
-                Learn the basic concepts of Kubernetes and how it
-                manages containerized applications.
-            </p>
-            <p>Category: DevOps</p>
-            <a href="#">Read Article</a>
-        </article>
-
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Article Hub</p>
-    </footer>
+    <section class="featured">
+        <h2>Featured Articles</h2>
+        <div class="article-grid">
+            <article class="article-card">
+                <h3>Understanding Docker</h3>
+                <p>Learn the basics of containers and how Docker simplifies application deployment.</p>
+                <a href="/articles" class="read-more">Read Article →</a>
+            </article>
+            <article class="article-card">
+                <h3>Getting Started with Linux</h3>
+                <p>Explore Linux fundamentals and some of the concepts every developer should know.</p>
+                <a href="/articles" class="read-more">Read Article →</a>
+            </article>
+            <article class="article-card">
+                <h3>What is the Internet?</h3>
+                <p>Learn the basics of how computers communicate across the Internet.</p>
+                <a href="/articles" class="read-more">Read Article →</a>
+            </article>
+        </div>
+    </section>
+</main>
 
 </body>
 </html>
