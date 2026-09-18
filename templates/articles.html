@@ -3,124 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flask App - Home</title>
+    <title>Flask App - Articles</title>
+
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
+
         body {
             font-family: Arial, sans-serif;
             background: #f5f7fa;
             color: #222;
             line-height: 1.6;
         }
+
         nav {
             background: #1f2937;
-            padding: 16px 8%;
-            display: flex;
-            justify-content: center;
+            padding: 16px;
+            text-align: center;
         }
+
         .nav-links {
             display: flex;
+            justify-content: center;
             gap: 30px;
             list-style: none;
         }
+
         .nav-links a {
             color: #d1d5db;
             text-decoration: none;
-            font-size: 16px;
         }
+
         .nav-links a:hover {
             color: #fff;
         }
+
         .container {
             max-width: 1100px;
-            margin: 40px auto;
+            margin: 50px auto;
             padding: 0 20px;
         }
-        .hero {
-            background: #fff;
+
+        .page-header {
             text-align: center;
-            padding: 50px 20px;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
             margin-bottom: 40px;
         }
-        .hero h1 {
+
+        .page-header h1 {
             font-size: 36px;
-            color: #111827;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
-        .hero p {
-            max-width: 600px;
-            margin: 0 auto 24px;
+
+        .page-header p {
             color: #4b5563;
-            font-size: 17px;
         }
-        .btn {
-            display: inline-block;
-            background: #2563eb;
-            color: #fff;
-            padding: 10px 24px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .btn:hover {
-            background: #1d4ed8;
-        }
-        .featured h2 {
-            text-align: center;
-            font-size: 28px;
-            margin-bottom: 24px;
-        }
+
         .article-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
         }
+
         .article-card {
             background: #fff;
-            padding: 20px;
+            padding: 25px;
             border: 1px solid #e5e7eb;
-            border-radius: 6px;
+            border-radius: 8px;
         }
-        .article-card h3 {
-            font-size: 18px;
-            margin-bottom: 8px;
+
+        .category {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1d4ed8;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 12px;
         }
+
+        .article-card h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
         .article-card p {
             color: #4b5563;
-            margin-bottom: 14px;
+            margin-bottom: 15px;
         }
+
         .read-more {
             color: #2563eb;
             text-decoration: none;
             font-weight: bold;
         }
+
         .read-more:hover {
             text-decoration: underline;
         }
+
         @media (max-width: 768px) {
-            nav {
-                padding: 14px 5%;
-            }
             .nav-links {
                 gap: 18px;
                 flex-wrap: wrap;
-                justify-content: center;
             }
+
             .article-grid {
                 grid-template-columns: 1fr;
-            }
-            .hero h1 {
-                font-size: 28px;
             }
         }
     </style>
 </head>
+
 <body>
 
 <nav>
@@ -133,33 +130,81 @@
 </nav>
 
 <main class="container">
-    <section class="hero">
-        <h1>Discover. Learn. Explore.</h1>
-        <p>Explore useful and interesting articles covering technology, programming, DevOps, Linux, networking, and more.</p>
-        <a href="/articles" class="btn">Explore Articles</a>
+
+    <section class="page-header">
+        <h1>Technical Articles</h1>
+        <p>
+            Explore practical articles about programming, DevOps, cloud computing,
+            Linux, containers, and modern software development.
+        </p>
     </section>
 
-    <section class="featured">
-        <h2>Featured Articles</h2>
-        <div class="article-grid">
-            <article class="article-card">
-                <h3>Understanding Docker</h3>
-                <p>Learn the basics of containers and how Docker simplifies application deployment.</p>
-                <a href="/articles" class="read-more">Read Article →</a>
-            </article>
-            <article class="article-card">
-                <h3>Getting Started with Linux</h3>
-                <p>Explore Linux fundamentals and some of the concepts every developer should know.</p>
-                <a href="/articles" class="read-more">Read Article →</a>
-            </article>
-            <article class="article-card">
-                <h3>What is the Internet?</h3>
-                <p>Learn the basics of how computers communicate across the Internet.</p>
-                <a href="/articles" class="read-more">Read Article →</a>
-            </article>
-        </div>
+    <section class="article-grid">
+
+        <article class="article-card">
+            <span class="category">Docker</span>
+            <h2>Understanding Docker</h2>
+            <p>
+                Learn how containers work and how Docker makes it easier
+                to build, package, and deploy applications.
+            </p>
+            <a href="#" class="read-more">Read Article →</a>
+        </article>
+
+        <article class="article-card">
+            <span class="category">Kubernetes</span>
+            <h2>Getting Started with Kubernetes</h2>
+            <p>
+                Understand the basics of Kubernetes and how it manages
+                containerized applications across a cluster.
+            </p>
+            <a href="#" class="read-more">Read Article →</a>
+        </article>
+
+        <article class="article-card">
+            <span class="category">CI/CD</span>
+            <h2>Introduction to GitHub Actions</h2>
+            <p>
+                Discover how automated workflows can test, build, and
+                deploy applications whenever you push new code.
+            </p>
+            <a href="#" class="read-more">Read Article →</a>
+        </article>
+
+        <article class="article-card">
+            <span class="category">Linux</span>
+            <h2>Linux Fundamentals for Developers</h2>
+            <p>
+                Explore essential Linux commands, filesystems, processes,
+                permissions, and other concepts developers use every day.
+            </p>
+            <a href="#" class="read-more">Read Article →</a>
+        </article>
+
+        <article class="article-card">
+            <span class="category">DevOps</span>
+            <h2>What is DevOps?</h2>
+            <p>
+                Learn how development and operations practices come together
+                to improve software delivery and automation.
+            </p>
+            <a href="#" class="read-more">Read Article →</a>
+        </article>
+
+        <article class="article-card">
+            <span class="category">Cloud</span>
+            <h2>Introduction to Cloud Computing</h2>
+            <p>
+                Understand the fundamentals of cloud computing, including
+                infrastructure, scalability, and cloud-based services.
+            </p>
+            <a href="#" class="read-more">Read Article →</a>
+        </article>
+
     </section>
+
 </main>
 
 </body>
 </html>
+
