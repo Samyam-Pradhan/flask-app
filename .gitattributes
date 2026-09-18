@@ -1,1 +1,8 @@
 *.py linguist-language=Python
+
+*.html linguist-vendored
+
+*.yaml linguist-language=YAML
+*.yml linguist-language=YAML
+
+Dockerfile linguist-language=Dockerfile
